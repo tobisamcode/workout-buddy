@@ -12,7 +12,7 @@ workoutRouter.get("/:id", (req, res) => {
   res.json({ message: "GET a single workout" });
 });
 
-// POST a new workout
+// POST a new workoutf
 workoutRouter.post("/", (req, res) => {
   res.json({ message: "POST a new workout" });
 });

@@ -1,5 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import WorkoutDetails from "../../components/workout-details/workout-details.component";
+import WorkoutForm from "../../components/workout-form/workout-form.component";
+import "./home.styles.scss";
 
 const Home = () => {
   const [workouts, setWorkouts] = useState(null);
@@ -7,10 +10,7 @@ const Home = () => {
   useEffect(() => {
     const fetchWorkouts = async () => {
       const response = await fetch("/api/workouts");
-      console.log(response);
-
       const data = await response.json();
-      console.log(data);
 
       if (response.ok) {
         setWorkouts(data);
@@ -24,8 +24,11 @@ const Home = () => {
     <div className="home">
       <div className="workouts">
         {workouts &&
-          workouts.map((workout) => <p key={workout._id}>{workout.title}</p>)}
+          workouts.map((workout) => (
+            <WorkoutDetails key={workout._id} workout={workout} />
+          ))}
       </div>
+      <WorkoutForm />
     </div>
   );
 };

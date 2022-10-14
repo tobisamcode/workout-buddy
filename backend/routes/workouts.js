@@ -18,12 +18,12 @@ workoutRouter.post("/", (req, res) => {
 });
 
 // DELETE a  workout
-workoutRouter.get("/:id", (req, res) => {
+workoutRouter.delete("/:id", (req, res) => {
   res.json({ message: "DELETE a workout" });
 });
 
 // UPDATE a  workout
-workoutRouter.get("/", (req, res) => {
+workoutRouter.patch("/:id", (req, res) => {
   res.json({ message: "UPDATE a workout" });
 });
 

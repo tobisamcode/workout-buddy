@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const { connectToMongoDB } = require("./connectDB/db");
 
 const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user ");
 
 // express app
 
@@ -23,8 +24,8 @@ app.use((req, res, next) => {
 });
 
 // - Routes
-
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 // listen for request
 connectToMongoDB(

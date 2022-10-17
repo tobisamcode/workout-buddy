@@ -1,4 +1,4 @@
-const express = require("express");
+const User = require("../models/user");
 
 // login user
 const loginUser = async (req, res) => {

@@ -11,7 +11,7 @@ function connectToMongoDB() {
     console.log("Connected to MongoDB successfully");
   });
 
-  moogoose.connection.on("error", err => {
+  moogoose.connection.on("error", (err) => {
     console.log("Error connecting to MongoDB", err);
   });
 }
